@@ -1,4 +1,4 @@
-# OLM’s Teaching Assistant
+# Teaching Assistant
 
 An AI assistant for teachers: lesson ideas, curriculum-grounded chat, interdisciplinary planning, and Schoology-aware assessment support.
 

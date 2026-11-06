@@ -40,7 +40,7 @@ import type {
   SchoologyRubric,
 } from "@/types/schoology";
 
-const SCHOOLOGY_DISCONNECTED_STORAGE_KEY = "ollm-schoology-disconnected";
+const SCHOOLOGY_DISCONNECTED_STORAGE_KEY = "teaching-assistant-schoology-disconnected";
 
 function formatSavedAt(iso: string, locale: string): string {
   try {

@@ -2,7 +2,7 @@ export type AppLanguage = "en" | "pt-BR";
 
 import type { Bimestre } from "@/types/lessonPlans";
 
-export const LANGUAGE_STORAGE_KEY = "ollm-language";
+export const LANGUAGE_STORAGE_KEY = "teaching-assistant-language";
 
 export const LANGUAGE_OPTIONS: Array<{ value: AppLanguage; label: string }> = [
   { value: "en", label: "English" },

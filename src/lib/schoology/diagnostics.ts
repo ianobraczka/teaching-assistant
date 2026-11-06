@@ -19,7 +19,7 @@ export const DIAGNOSTIC_REPORT_PATH = path.join(
   "schoology-debug-report.json",
 );
 
-const USER_AGENT = "ollm-assessment-assistant/1.0";
+const USER_AGENT = "teaching-assistant/1.0";
 
 export type SchoologyResponseKind =
   | "OK"

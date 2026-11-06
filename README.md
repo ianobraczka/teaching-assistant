@@ -8,12 +8,12 @@ Built with **Next.js**, **TypeScript**, and connected via API to **Google Gemini
 
 ## Privacy & data
 
-- **No secrets in this repository.** API keys and Schoology credentials live only in local / host environment variables (see `.env.example`). Never commit `.env.local`.
-- **No student data is stored in the repo.** Schoology names, grades, and submissions are fetched at runtime over the API and are not checked into git.
+- **No secrets in this repository.** API keys and integration credentials should be set locally.
+- **No student data is stored in the repo.** Names, grades, and submissions are fetched at runtime over the API and are not checked into git or any database.
 - **Chat uploads stay in the browser session** (memory only). There is no auth database and no persistent document store for uploads.
 - **Optional anonymization** replaces student names with aliases before sending course chat context to Gemini; names are restored in the UI after the reply.
 - **Curriculum under `data/plans/` is sample content only.** Plans are written for a fictional school named **Colégio Horizonte**, which **does not exist**. They are demo curriculum, not any real school’s official materials. Swap in your own files as needed.
-- Bundled framework texts (`BNCC`, Massachusetts Curriculum Framework) are reference extracts for local grounding. Confirm redistribution rights for your own deployment.
+- Bundled framework texts (`BNCC`, Massachusetts Curriculum Framework) are reference extracts for local grounding.
 
 ---
 

@@ -7,7 +7,7 @@ Subject: Mathematics
 Academic Year: 2025
 
 Overview:
-Fifth-grade mathematics at Example School builds computational fluency, spatial reasoning, and quantitative literacy through problem-solving grounded in Brazilian daily life. Students consolidate whole-number operations, explore fractions and decimals as tools for fair sharing and measurement, and begin connecting geometry to real spaces such as classrooms, neighborhoods, and maps. The year emphasizes reasoning, justification, and communication of mathematical thinking in preparation for proportional reasoning in middle school.
+Fifth-grade mathematics at Colégio Horizonte builds computational fluency, spatial reasoning, and quantitative literacy through problem-solving grounded in Brazilian daily life. Students consolidate whole-number operations, explore fractions and decimals as tools for fair sharing and measurement, and begin connecting geometry to real spaces such as classrooms, neighborhoods, and maps. The year emphasizes reasoning, justification, and communication of mathematical thinking in preparation for proportional reasoning in middle school.
 
 Core Competencies:
 - Solve multi-step problems using the four operations with whole numbers, fractions, and decimals

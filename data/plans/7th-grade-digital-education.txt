@@ -7,7 +7,7 @@ Subject: Digital Education
 Academic Year: 2025
 
 Overview:
-Seventh-grade digital education at Example School advances students from block-based thinking to text-based programming fundamentals while deepening data literacy and ethical technology judgment. Students work with real data sets from school science investigations, learn to clean and visualize information responsibly, and examine how technology choices affect privacy, equity, and the environment. The curriculum directly supports interdisciplinary capstone projects requiring programming, analysis, and persuasive communication.
+Seventh-grade digital education at Colégio Horizonte advances students from block-based thinking to text-based programming fundamentals while deepening data literacy and ethical technology judgment. Students work with real data sets from school science investigations, learn to clean and visualize information responsibly, and examine how technology choices affect privacy, equity, and the environment. The curriculum directly supports interdisciplinary capstone projects requiring programming, analysis, and persuasive communication.
 
 Core Competencies:
 - Collect, clean, and interpret data sets using spreadsheets and basic scripts

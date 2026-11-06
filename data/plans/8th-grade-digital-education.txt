@@ -7,7 +7,7 @@ Subject: Digital Education
 Academic Year: 2025
 
 Overview:
-Eighth-grade digital education at Example School prepares students to understand, build, and critique technology in an age of artificial intelligence and data-driven decision-making. Students complete substantial digital projects that integrate programming, data analysis, and design thinking while examining ethical implications of automation, surveillance, and environmental costs. The program culminates in responsible innovation challenges tied to the school's sustainability goals and serves as a bridge to high school computer science and research methods.
+Eighth-grade digital education at Colégio Horizonte prepares students to understand, build, and critique technology in an age of artificial intelligence and data-driven decision-making. Students complete substantial digital projects that integrate programming, data analysis, and design thinking while examining ethical implications of automation, surveillance, and environmental costs. The program culminates in responsible innovation challenges tied to the school's sustainability goals and serves as a bridge to high school computer science and research methods.
 
 Core Competencies:
 - Explain how artificial intelligence systems work at a conceptual level and identify limitations

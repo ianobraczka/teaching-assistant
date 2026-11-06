@@ -7,7 +7,7 @@ Subject: Digital Education
 Academic Year: 2025
 
 Overview:
-Fifth-grade digital education at Example School introduces students to responsible participation in digital environments while fostering creative expression through technology. The program aligns with BNCC computing fundamentals and the school's technology use policy. Students learn to navigate online spaces safely, recognize trustworthy information, and produce simple digital artifacts that support learning across subjects. Emphasis is placed on citizenship, empathy, and age-appropriate boundaries rather than advanced technical skills.
+Fifth-grade digital education at Colégio Horizonte introduces students to responsible participation in digital environments while fostering creative expression through technology. The program aligns with BNCC computing fundamentals and the school's technology use policy. Students learn to navigate online spaces safely, recognize trustworthy information, and produce simple digital artifacts that support learning across subjects. Emphasis is placed on citizenship, empathy, and age-appropriate boundaries rather than advanced technical skills.
 
 Core Competencies:
 - Demonstrate safe and respectful behavior in digital environments

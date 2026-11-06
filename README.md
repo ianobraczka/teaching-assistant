@@ -12,7 +12,7 @@ Built with **Next.js**, **TypeScript**, and **Google Gemini**.
 - **No student data is stored in the repo.** Schoology names, grades, and submissions are fetched at runtime over the API and are not checked into git.
 - **Chat uploads stay in the browser session** (memory only). There is no auth database and no persistent document store for uploads.
 - **Optional anonymization** replaces student names with aliases before sending course chat context to Gemini; names are restored in the UI after the reply.
-- **Curriculum under `data/plans/` is example content only** — fictional sample plans for demos. It is not a real school’s official curriculum. Swap in your own files as needed.
+- **Curriculum under `data/plans/` is sample content only.** Plans are written for a fictional school named **Colégio Horizonte**, which **does not exist**. They are demo curriculum, not any real school’s official materials. Swap in your own files as needed.
 - Bundled framework texts (`BNCC`, Massachusetts Curriculum Framework) are reference extracts for local grounding. Confirm redistribution rights for your own deployment.
 
 ---
@@ -22,7 +22,7 @@ Built with **Next.js**, **TypeScript**, and **Google Gemini**.
 | Module | Route | Purpose |
 |--------|--------|---------|
 | **Teaching Assistant** | `/` | Chat grounded in selected reference docs (BNCC, Massachusetts, session uploads). Lesson plans, activities, rubrics — with pedagogical differentiation. |
-| **Interdisciplinary Planning** | `/interdisciplinary-planning` | Build plans from **example** grade/subject curriculum files under `data/plans/`. |
+| **Interdisciplinary Planning** | `/interdisciplinary-planning` | Build plans from sample grade/subject files under `data/plans/` (Colégio Horizonte — fictional demo school). |
 | **Lesson Map** | `/lesson-map` | Browse sample lesson-map cards. |
 | **Assessment Assistant** | `/assessment-assistant` | Connect to Schoology (two-legged OAuth), browse courses/assignments, and chat with course or assignment context. |
 
@@ -50,7 +50,7 @@ Next.js App Router API routes  (/api/chat, /api/assessment-assistant/*, …)
 2. **Prompt + document context** — Selected `.txt` sources (and optional uploads) are assembled into a structured prompt; no vector DB in the MVP.
 3. **Module-specific prompts** — Teaching Assistant, Assessment, Course chat, and Interdisciplinary planning each have their own system instructions.
 4. **Schoology via signed REST** — Two-legged OAuth 1.0 from the server only (no Playwright scraping, no browser OAuth redirect for the API path).
-5. **Example curriculum pack** — Interdisciplinary features read local plan files so the demo works without a school CMS.
+5. **Sample curriculum pack** — Interdisciplinary features read local plan files for a fictional school (**Colégio Horizonte**) so the demo works without a real school CMS.
 
 ---
 
@@ -71,7 +71,7 @@ Next.js App Router API routes  (/api/chat, /api/assessment-assistant/*, …)
 ### Interdisciplinary Planning
 
 1. Teacher picks grade, period, primary subject (and optional connections).
-2. Server loads matching **example** plans from `data/plans/`.
+2. Server loads matching **sample** plans from `data/plans/` (Colégio Horizonte — fictional).
 3. Gemini proposes a lesson plan / project / sequence grounded only in that provided text.
 
 ---
@@ -127,7 +127,7 @@ src/
   lib/                  # Prompts, Gemini, Schoology, analytics, i18n
 data/
   documents/            # Built-in framework extracts (BNCC, Massachusetts)
-  plans/                # Example interdisciplinary curriculum (demo only)
+  plans/                # Sample curriculum for fictional Colégio Horizonte (demo only)
 ```
 
 Useful scripts:
@@ -150,7 +150,7 @@ Host on Vercel (or similar). Set the same environment variables in the project s
 
 - Keep `.env*` out of git (only `.env.example` is tracked).
 - Do not commit `data/schoology-*` artifacts, PDFs, or `.cursor/`.
-- Treat `data/plans/` as replaceable demo content.
+- Treat `data/plans/` as replaceable demo content (Colégio Horizonte is fictional).
 - Rotate API keys if they may have been exposed outside the repo.
 
 ---

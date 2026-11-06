@@ -4,6 +4,10 @@ An AI assistant for teachers: lesson ideas, curriculum-grounded chat, interdisci
 
 Built with **Next.js**, **TypeScript**, and connected via API to **Google Gemini** models.
 
+**Live demo:** [https://teaching-assistant-2027.vercel.app/](https://teaching-assistant-2027.vercel.app/)
+
+Assessment Assistant on the demo is password-protected when `SITE_PASSWORD` is configured; other modules are open.
+
 ---
 
 ## Privacy & data

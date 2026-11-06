@@ -2,7 +2,7 @@
 
 An AI assistant for teachers: lesson ideas, curriculum-grounded chat, interdisciplinary planning, and Schoology-aware assessment support.
 
-Built with **Next.js**, **TypeScript**, and **Google Gemini**.
+Built with **Next.js**, **TypeScript**, and connected via API to **Google Gemini** models.
 
 ---
 

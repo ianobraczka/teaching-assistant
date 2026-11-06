@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: APP_TAGLINE,
-  icons: { icon: "/new-favicon-removebg-preview.png" },
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({

@@ -8,7 +8,8 @@ Built with **Next.js**, **TypeScript**, and connected via API to **Google Gemini
 
 ## Privacy & data
 
-- **No secrets in this repository.** API keys and integration credentials should be set locally.
+- **No secrets in this repository.** API keys and Schoology credentials live only in local / host environment variables (see `.env.example`). Never commit `.env.local`.
+- **Optional Schoology password (`SITE_PASSWORD`).** When set (recommended on Vercel if Schoology keys are configured), only **Assessment Assistant** requires the password. Teaching Assistant and other modules stay public. Without it, anyone with the URL can open Assessment Assistant.
 - **No student data is stored in the repo.** Names, grades, and submissions are fetched at runtime over the API and are not checked into git or any database.
 - **Chat uploads stay in the browser session** (memory only). There is no auth database and no persistent document store for uploads.
 - **Optional anonymization** replaces student names with aliases before sending course chat context to Gemini; names are restored in the UI after the reply.
@@ -108,6 +109,7 @@ Open [http://localhost:3030](http://localhost:3030).
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `GEMINI_API_KEY` | Yes | Google Generative AI API key |
+| `SITE_PASSWORD` | Recommended if Schoology is enabled | Password gate for Assessment Assistant / Schoology only; unset = open |
 | `GEMINI_MODEL` | No | Preferred model (fallback chain in `src/lib/gemini.ts`) |
 | `SCHOOLOGY_BASE_URL` | Assessment | Default `https://api.schoology.com/v1` |
 | `SCHOOLOGY_CONSUMER_KEY` | Assessment | Two-legged API consumer key |
@@ -143,6 +145,8 @@ npm run convert-pdf        # Helper to turn PDFs into .txt for data/documents
 ## Deploying
 
 Host on Vercel (or similar). Set the same environment variables in the project settings. Do **not** upload `.env.local` or Schoology debug dumps.
+
+**Important:** set `SITE_PASSWORD` on Vercel if Schoology keys are configured. That locks **only** Assessment Assistant; the rest of the app remains publicly usable.
 
 ---
 

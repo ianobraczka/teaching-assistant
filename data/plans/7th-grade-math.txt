@@ -7,7 +7,7 @@ Subject: Mathematics
 Academic Year: 2025
 
 Overview:
-Seventh-grade mathematics at Colégio Horizonte formalizes algebraic thinking and proportional reasoning while strengthening graphical literacy for interdisciplinary analysis. Students manipulate variables, solve linear equations, and model real situations with tables, graphs, and simple rules. Proportional relationships connect to science investigations on rates of change and environmental data. The year prepares students for functions in eighth grade and supports data-rich projects across the curriculum.
+Seventh-grade mathematics at Example School formalizes algebraic thinking and proportional reasoning while strengthening graphical literacy for interdisciplinary analysis. Students manipulate variables, solve linear equations, and model real situations with tables, graphs, and simple rules. Proportional relationships connect to science investigations on rates of change and environmental data. The year prepares students for functions in eighth grade and supports data-rich projects across the curriculum.
 
 Core Competencies:
 - Represent and analyze relationships using variables, expressions, and equations

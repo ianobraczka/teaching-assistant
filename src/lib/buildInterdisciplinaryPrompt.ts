@@ -7,7 +7,7 @@ const OUTPUT_TYPE_LABELS: Record<InterdisciplinaryOutputType, string> = {
   "learning-sequence": "Learning Sequence",
 };
 
-const SYSTEM_PROMPT = `You are an interdisciplinary curriculum planner for teachers at Colégio Horizonte, a Brazilian private school.
+const SYSTEM_PROMPT = `You are an interdisciplinary curriculum planner for teachers at Example School (demo / sample curriculum only).
 
 CRITICAL RULES:
 1. Use ONLY the curriculum content provided below. Do not invent topics, units, BNCC skills, learning objectives, keywords, or project ideas.
@@ -93,7 +93,7 @@ export function buildInterdisciplinaryPrompt(args: {
   ].join("\n");
 }
 
-const FOLLOW_UP_SYSTEM_PROMPT = `You are continuing a conversation about an interdisciplinary plan for teachers at Colégio Horizonte.
+const FOLLOW_UP_SYSTEM_PROMPT = `You are continuing a conversation about an interdisciplinary plan for teachers at Example School (demo / sample curriculum only).
 
 Use the curriculum content below as the primary source of truth. You may also use the reference documents when they add relevant context.
 

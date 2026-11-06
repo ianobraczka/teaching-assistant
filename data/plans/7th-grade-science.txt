@@ -7,7 +7,7 @@ Subject: Science
 Academic Year: 2025
 
 Overview:
-Seventh-grade science at Colégio Horizonte centers on ecological systems, human environmental impact, and the physical principles of matter and energy. Students analyze population dynamics, pollution pathways, and resource use in Brazilian contexts from the Amazon to urban centers. Matter and energy units bridge to chemistry and physics in eighth grade through experiments on states of matter, heat transfer, and conservation laws. Data collection and mathematical modeling are embedded throughout to support interdisciplinary projects.
+Seventh-grade science at Example School centers on ecological systems, human environmental impact, and the physical principles of matter and energy. Students analyze population dynamics, pollution pathways, and resource use in Brazilian contexts from the Amazon to urban centers. Matter and energy units bridge to chemistry and physics in eighth grade through experiments on states of matter, heat transfer, and conservation laws. Data collection and mathematical modeling are embedded throughout to support interdisciplinary projects.
 
 Core Competencies:
 - Analyze ecological relationships including competition, predation, and symbiosis

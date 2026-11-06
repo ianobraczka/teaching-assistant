@@ -1,251 +1,160 @@
-# OLM's Teaching Assistant (MVP)
+# OLM’s Teaching Assistant
 
-Chat with an AI assistant grounded in **built-in curriculum frameworks** and optional **session uploads** (PDF, DOCX, or TXT). Use it to draft lesson plans, activities, rubrics, and classroom ideas.
+An AI assistant for teachers: lesson ideas, curriculum-grounded chat, interdisciplinary planning, and Schoology-aware assessment support.
 
-**Assessment Assistant** ([`/assessment-assistant`](http://localhost:3030/assessment-assistant)) connects to **Schoology** via the REST API to browse courses, assignments, submissions, and rubrics.
+Built with **Next.js**, **TypeScript**, and **Google Gemini**.
 
-**Built-in sources** (bundled with the app):
+---
 
-- Brazilian **BNCC**
-- **Massachusetts Curriculum Framework**
+## Privacy & data
 
-**Session-only uploads:** no authentication, database, or persistent user storage. Uploaded text lives in browser memory for the current session only.
+- **No secrets in this repository.** API keys and Schoology credentials live only in local / host environment variables (see `.env.example`). Never commit `.env.local`.
+- **No student data is stored in the repo.** Schoology names, grades, and submissions are fetched at runtime over the API and are not checked into git.
+- **Chat uploads stay in the browser session** (memory only). There is no auth database and no persistent document store for uploads.
+- **Optional anonymization** replaces student names with aliases before sending course chat context to Gemini; names are restored in the UI after the reply.
+- **Curriculum under `data/plans/` is example content only** — fictional sample plans for demos. It is not a real school’s official curriculum. Swap in your own files as needed.
+- Bundled framework texts (`BNCC`, Massachusetts Curriculum Framework) are reference extracts for local grounding. Confirm redistribution rights for your own deployment.
+
+---
+
+## What you can do
+
+| Module | Route | Purpose |
+|--------|--------|---------|
+| **Teaching Assistant** | `/` | Chat grounded in selected reference docs (BNCC, Massachusetts, session uploads). Lesson plans, activities, rubrics — with pedagogical differentiation. |
+| **Interdisciplinary Planning** | `/interdisciplinary-planning` | Build plans from **example** grade/subject curriculum files under `data/plans/`. |
+| **Lesson Map** | `/lesson-map` | Browse sample lesson-map cards. |
+| **Assessment Assistant** | `/assessment-assistant` | Connect to Schoology (two-legged OAuth), browse courses/assignments, and chat with course or assignment context. |
+
+---
+
+## Architecture
+
+```
+Browser (React UI)
+    │  same-origin fetch
+    ▼
+Next.js App Router API routes  (/api/chat, /api/assessment-assistant/*, …)
+    │
+    ├── Prompt builders  (src/lib/build*.ts)
+    ├── Gemini client    (src/lib/gemini.ts)     ← GEMINI_API_KEY
+    └── Schoology client (src/lib/schoology/*)   ← OAuth 1.0 consumer key/secret
+            │
+            ▼
+      api.schoology.com
+```
+
+### Design choices
+
+1. **Server-side secrets** — Gemini and Schoology credentials never ship to the browser.
+2. **Prompt + document context** — Selected `.txt` sources (and optional uploads) are assembled into a structured prompt; no vector DB in the MVP.
+3. **Module-specific prompts** — Teaching Assistant, Assessment, Course chat, and Interdisciplinary planning each have their own system instructions.
+4. **Schoology via signed REST** — Two-legged OAuth 1.0 from the server only (no Playwright scraping, no browser OAuth redirect for the API path).
+5. **Example curriculum pack** — Interdisciplinary features read local plan files so the demo works without a school CMS.
+
+---
+
+## How it works
+
+### Teaching Assistant
+
+1. Teacher selects built-in and/or uploaded sources.
+2. Client posts the question + selected source ids to `/api/chat`.
+3. Server loads document text (capped per source), builds the prompt, streams Gemini’s reply.
+
+### Assessment Assistant
+
+1. Server uses `SCHOOLOGY_CONSUMER_KEY` / `SECRET` to call Schoology’s REST API.
+2. UI lists courses (current/archived), materials, students, and submissions.
+3. Course or assignment chat classifies the question, computes analytics from a course snapshot, and may attach submission extracts when relevant — then calls Gemini.
+
+### Interdisciplinary Planning
+
+1. Teacher picks grade, period, primary subject (and optional connections).
+2. Server loads matching **example** plans from `data/plans/`.
+3. Gemini proposes a lesson plan / project / sequence grounded only in that provided text.
+
+---
 
 ## Stack
 
-- Next.js 15 (App Router)
-- TypeScript
-- Tailwind CSS v4 + shadcn-style UI
-- Google Gemini API (`@google/generative-ai`)
-- `pdf-parse` · `mammoth` · plain TXT parsing
+- Next.js 15 (App Router) · React 19 · TypeScript  
+- Tailwind CSS v4 · Gemini (`@google/generative-ai`)  
+- `pdf-parse` / `mammoth` for session uploads  
+
+---
 
 ## Requirements
 
-- Node.js **≥ 20.19** (see `package.json` engines)
+- Node.js **≥ 20.19**
 - A [Gemini API key](https://aistudio.google.com/apikey)
+- (Optional) Schoology personal API consumer key & secret for Assessment Assistant
+
+---
 
 ## Setup
 
 ```bash
 npm install
 cp .env.example .env.local
-# Edit .env.local and set GEMINI_API_KEY
+# Edit .env.local with your keys (never commit this file)
 npm run dev
 ```
 
-Open [http://localhost:3030](http://localhost:3030) (OLM's Teaching Assistant uses port **3030** by default).
+Open [http://localhost:3030](http://localhost:3030).
 
-## Environment variables
+### Environment variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
 | `GEMINI_API_KEY` | Yes | Google Generative AI API key |
-| `GEMINI_MODEL` | No | Override the default model chain (see `src/lib/gemini.ts`) |
-| `SCHOOLOGY_BASE_URL` | For Assessment Assistant | Schoology REST API base (default `https://api.schoology.com/v1`) |
-| `SCHOOLOGY_CONSUMER_KEY` | For Assessment Assistant | Two-legged API consumer key |
-| `SCHOOLOGY_CONSUMER_SECRET` | For Assessment Assistant | Two-legged API consumer secret |
-| `SCHOOLOGY_DOMAIN` | No | Schoology web UI host for “Open in Schoology” links only (not API calls) |
-| `SCHOOLOGY_DEBUG` | No | Set to `1` to enable debug routes and `data/schoology-debug.log` |
+| `GEMINI_MODEL` | No | Preferred model (fallback chain in `src/lib/gemini.ts`) |
+| `SCHOOLOGY_BASE_URL` | Assessment | Default `https://api.schoology.com/v1` |
+| `SCHOOLOGY_CONSUMER_KEY` | Assessment | Two-legged API consumer key |
+| `SCHOOLOGY_CONSUMER_SECRET` | Assessment | Two-legged API consumer secret |
+| `SCHOOLOGY_DOMAIN` | No | Web UI host for “Open in Schoology” links |
+| `SCHOOLOGY_DEBUG` | No | `1` enables debug routes / local debug log |
+| `ANONYMIZE_STUDENT_NAMES` | No | Default on; set `0` to disable |
 
-## Built-in reference documents
+---
 
-Built-in frameworks ship as **pre-extracted `.txt` files** under `/data/documents`. They are read on the server when selected — PDFs are **not** parsed on every request.
-
-### Add or update a built-in document
-
-1. Create or edit a `.txt` file under `data/documents/`, for example:
-   - `data/documents/bncc.txt`
-   - `data/documents/massachusetts-framework.txt`
-2. Register it in `src/lib/builtInDocuments.ts` with:
-   - `id` — stable key sent from the client (e.g. `bncc`)
-   - `title` — label shown in the UI and in prompts
-   - `description` — short helper text in the document selector
-   - `filePath` — path relative to project root (e.g. `data/documents/bncc.txt`)
-3. Restart the dev server (or redeploy) so the new file is picked up.
-
-If a registered file is missing at runtime, `/api/chat` returns a clear error explaining which path to add.
-
-### Convert PDFs to TXT
-
-Use any reliable text-extraction workflow before committing files:
-
-```bash
-# Example with pdftotext (poppler-utils)
-pdftotext -layout source.pdf data/documents/bncc.txt
-
-# Or Python (pdfminer.six)
-python -m pdfminer.high_level source.pdf -o data/documents/bncc.txt
-```
-
-Review the output for encoding issues, headers/footers, and table formatting. The MVP sends full selected text to Gemini (truncated per document at 100k characters).
-
-### Deployment note
-
-Built-in `.txt` files are **bundled with the deployment** (included in the repo / Vercel project). Uploaded documents remain **temporary** in the browser and are never written to disk on the server.
-
-On Vercel, `next.config.ts` uses `outputFileTracingIncludes` so `data/documents/**` is copied into the `/api/chat` serverless bundle. Without this, `readFile` at runtime fails with “Built-in document file is missing” even when the files exist in Git.
-
-## Project structure
+## Project layout
 
 ```
-data/
-  documents/          # Pre-extracted built-in .txt files
 src/
-  app/
-    api/chat/         # Streaming Gemini; loads selected built-ins + optional upload
-    api/parse/        # PDF/DOCX/TXT extraction for session uploads
-    api/assessment-assistant/  # Schoology REST API (session, courses, materials, retrieve, file)
-    assessment-assistant/      # Assessment Assistant UI
-  components/
-    AssessmentAssistantPage.tsx
-    AssessmentAssistantSidebar.tsx
-    DocumentSelector.tsx
-    UploadBox.tsx
-    ChatWindow.tsx
-    Sidebar.tsx
-    ...
-  lib/
-    schoology/            # OAuth 1.0 signing + REST API client (no Playwright / scraping)
-    builtInDocuments.ts   # Registry (id, title, description, filePath)
-    loadBuiltInDocument.ts
-    documentContext.ts    # buildDocumentContext()
-    buildPrompt.ts
-    gemini.ts
+  app/                  # Routes & API handlers
+  components/           # UI
+  lib/                  # Prompts, Gemini, Schoology, analytics, i18n
+data/
+  documents/            # Built-in framework extracts (BNCC, Massachusetts)
+  plans/                # Example interdisciplinary curriculum (demo only)
 ```
 
-## How chat context works (not RAG)
-
-This MVP does **not** use embeddings, chunking, or a vector database. For each message:
-
-1. The client sends `selectedBuiltInDocs`, optional `uploadedDocumentText`, and `useUploadedDocument`.
-2. The server loads only the selected built-in `.txt` files from disk.
-3. `buildDocumentContext()` combines sources as:
-
-   ```
-   [SOURCE: BNCC]
-   ...
-
-   [SOURCE: Massachusetts Curriculum Framework]
-   ...
-
-   [SOURCE: Uploaded document]
-   ...
-   ```
-
-4. Gemini receives the structured context plus conversation history.
-
-Later versions may add chunking, semantic search, and source-level citations.
-
-## Document size limits
-
-As an MVP performance safeguard, each selected reference document is **truncated to 100,000 characters** before being sent to Gemini.
-
-- Built-in `.txt` documents and the optional uploaded document are both affected.
-- The user’s chat messages are **not** truncated by this logic.
-
-Later versions should replace truncation with chunking, search, embeddings, or a full RAG pipeline.
-
-## Deploy to Vercel
-
-1. Push the repo to GitHub (include `data/documents/*.txt`).
-2. Import the project in [Vercel](https://vercel.com).
-3. Add `GEMINI_API_KEY` in **Project → Settings → Environment Variables**.
-4. For Assessment Assistant, add `SCHOOLOGY_CONSUMER_KEY`, `SCHOOLOGY_CONSUMER_SECRET`, and optionally `SCHOOLOGY_BASE_URL` / `SCHOOLOGY_DOMAIN`.
-5. Deploy (Node 20+).
-
-## MVP limitations (by design)
-
-- No user accounts or saved chats
-- No vector DB / embeddings / RAG
-- Up to **5 session uploads**; each source truncated at **100k characters** for performance
-- Uploads are not persisted
-- Gemini **503** / **529** triggers fallback to the next model in the chain
-
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Development server on port 3030 |
-| `npm run build` | Production build |
-| `npm run start` | Start production server |
-| `npm run lint` | ESLint |
-| `npm run verify:schoology` | Verify Schoology API credentials (`app-user-info` flow) |
-
-## Assessment Assistant (Schoology)
-
-Local feature at [`/assessment-assistant`](http://localhost:3030/assessment-assistant). Lists your Schoology courses, assignments, submissions, and rubrics via the **Schoology REST API** only — **no Playwright, no browser automation, and no HTML page scraping**.
-
-The browser calls same-origin `/api/assessment-assistant/*` routes. The server signs outbound requests to `https://api.schoology.com/v1` with **two-legged OAuth 1.0** (`SCHOOLOGY_CONSUMER_KEY` + `SCHOOLOGY_CONSUMER_SECRET`).
-
-### Architecture
-
-```
-Browser UI → /api/assessment-assistant/* → lib/schoology/* → signed fetch → api.schoology.com/v1
-```
-
-- **Auth / profile:** `GET /app-user-info` → `GET /users/{uid}` (not `/users/me`)
-- **Courses:** `GET /users/{uid}/sections`
-- **Materials:** `GET /sections/{id}/assignments`, grading categories, etc.
-- **Assignment detail:** `GET /sections/{id}/assignments/{id}`, submissions, grades, rubrics
-- **Files:** API `download_path` URLs proxied through `/api/assessment-assistant/file`
-
-`https://app.schoology.com/...` URLs are built only for display (“Open in Schoology” links), never fetched for data extraction.
-
-No browser OAuth redirect, no callback URL, and no ngrok required for local development.
-
-### Setup (local)
-
-1. Obtain **two-legged** Schoology API keys at **Integration → API** (`/api` → Request API Keys).  
-   Platform App keys (App Publisher → API Info) are **three-legged only** and will return  
-   `This application is not authorized to make 2-legged OAuth requests.`
-2. Copy `.env.example` to `.env.local` and set:
+Useful scripts:
 
 ```bash
-SCHOOLOGY_BASE_URL=https://api.schoology.com/v1
-SCHOOLOGY_CONSUMER_KEY=your_consumer_key
-SCHOOLOGY_CONSUMER_SECRET=your_consumer_secret
-# Optional — web UI links only (not API):
-# SCHOOLOGY_DOMAIN=https://app.schoology.com
+npm run verify:gemini      # Check Gemini key / model
+npm run verify:schoology   # Check Schoology credentials
+npm run convert-pdf        # Helper to turn PDFs into .txt for data/documents
 ```
 
-3. Restart `npm run dev` after changing `.env.local`.
-4. Open `/assessment-assistant` — connection and courses load automatically when credentials are valid.
+---
 
-**Log out** in the UI disconnects locally (clears course list in the browser). API credentials remain in `.env.local` until you remove them or click refresh to reconnect.
+## Deploying
 
-### Setup (production)
+Host on Vercel (or similar). Set the same environment variables in the project settings. Do **not** upload `.env.local` or Schoology debug dumps.
 
-Add the same `SCHOOLOGY_*` variables in your host’s environment (e.g. Vercel **Project → Settings → Environment Variables**). Do not commit `.env.local`.
+---
 
-### Verify credentials
+## Security checklist (for contributors)
 
-```bash
-npm run verify:schoology
-```
+- Keep `.env*` out of git (only `.env.example` is tracked).
+- Do not commit `data/schoology-*` artifacts, PDFs, or `.cursor/`.
+- Treat `data/plans/` as replaceable demo content.
+- Rotate API keys if they may have been exposed outside the repo.
 
-Or in development:
+---
 
-```bash
-curl http://localhost:3030/api/assessment-assistant/verify
-```
+## License
 
-Full diagnostics: `GET /api/assessment-assistant/debug` (development or `SCHOOLOGY_DEBUG=1`). Writes `data/schoology-debug-report.json`.
-
-### API routes
-
-| Route | Purpose |
-|-------|---------|
-| `GET /api/assessment-assistant/session` | Connection status + user profile (`picture_url` when available) |
-| `GET /api/assessment-assistant/courses` | Teacher sections |
-| `GET /api/assessment-assistant/materials?sectionId=` | Assignments grouped by grading period |
-| `POST /api/assessment-assistant/retrieve` | Assignment/test detail, submissions, rubric |
-| `GET /api/assessment-assistant/file` | Proxied download for submission attachments |
-| `GET /api/assessment-assistant/verify` | Dev credential check |
-| `GET /api/assessment-assistant/debug` | Dev diagnostics |
-
-### Notes
-
-- Keys must belong to a user with API access and appropriate teacher permissions.
-- Profile pictures come from the `picture_url` field on `GET /users/{id}`.
-- Assessment display URLs are built in `src/lib/schoology/schoologyUrls.ts`.
-- The network tab should show only same-origin `/api/assessment-assistant/*` requests, never direct calls to `api.schoology.com` from the browser.
+MIT — see [LICENSE](./LICENSE).

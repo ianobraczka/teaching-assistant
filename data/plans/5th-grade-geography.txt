@@ -7,7 +7,7 @@ Subject: Geography
 Academic Year: 2025
 
 Overview:
-Fifth-grade geography at Colégio Horizonte builds spatial literacy through map skills, regional study of Brazil, and introductory climate analysis. Students learn to read and create maps, identify Brazil's five macro-regions and their physical characteristics, and connect climate patterns to landscapes and daily life. Field observations in the school neighborhood and comparisons with other Brazilian regions anchor abstract cartographic concepts in places students know. US-influenced geography skills—cardinal directions, scale, legend interpretation, and thematic map analysis—support BNCC competencies while keeping Brazil as the primary frame of reference.
+Fifth-grade geography at Example School builds spatial literacy through map skills, regional study of Brazil, and introductory climate analysis. Students learn to read and create maps, identify Brazil's five macro-regions and their physical characteristics, and connect climate patterns to landscapes and daily life. Field observations in the school neighborhood and comparisons with other Brazilian regions anchor abstract cartographic concepts in places students know. US-influenced geography skills—cardinal directions, scale, legend interpretation, and thematic map analysis—support BNCC competencies while keeping Brazil as the primary frame of reference.
 
 Core Competencies:
 - Read and create maps using scale, legend, coordinates, and thematic layers

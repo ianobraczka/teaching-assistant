@@ -7,7 +7,7 @@ Subject: Science
 Academic Year: 2025
 
 Overview:
-Sixth-grade science at Colégio Horizonte deepens understanding of life's organization from cells to ecosystems and connects biological diversity to Brazilian biomes and conservation challenges. Students explore Earth systems including the atmosphere, hydrosphere, and geosphere, examining how matter and energy cycle through environments they can observe locally. Laboratory work with microscopes, field sampling, and data recording prepares students for interdisciplinary projects with mathematics and digital education.
+Sixth-grade science at Example School deepens understanding of life's organization from cells to ecosystems and connects biological diversity to Brazilian biomes and conservation challenges. Students explore Earth systems including the atmosphere, hydrosphere, and geosphere, examining how matter and energy cycle through environments they can observe locally. Laboratory work with microscopes, field sampling, and data recording prepares students for interdisciplinary projects with mathematics and digital education.
 
 Core Competencies:
 - Describe cell structure and explain the cell as the basic unit of life

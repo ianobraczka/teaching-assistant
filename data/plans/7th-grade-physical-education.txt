@@ -7,7 +7,7 @@ Subject: Physical Education
 Academic Year: 2025
 
 Overview:
-Seventh-grade physical education at Colégio Horizonte emphasizes athletics, nutrition for active bodies, and deeper conditioning. Students experience track and field events on the school yard, analyze how food fuels performance and recovery, and train speed, power, and endurance through structured programs. Social-emotional learning continues through team relays, peer coaching, and discussions of body image and health messaging. Rio context includes references to municipal athletics programs, outdoor training in parks, and the role of beach running and functional fitness in Carioca active culture.
+Seventh-grade physical education at Example School emphasizes athletics, nutrition for active bodies, and deeper conditioning. Students experience track and field events on the school yard, analyze how food fuels performance and recovery, and train speed, power, and endurance through structured programs. Social-emotional learning continues through team relays, peer coaching, and discussions of body image and health messaging. Rio context includes references to municipal athletics programs, outdoor training in parks, and the role of beach running and functional fitness in Carioca active culture.
 
 Core Competencies:
 - Demonstrate technique and safety in athletics events including running, jumping, and throwing
@@ -137,7 +137,7 @@ Keywords:
 Project Opportunities:
 - Small-group conditioning program presented to peers with rationale
 - Agility course design using school yard markings and minimal equipment
-- Flexibility routine video or poster for student athletes at Colégio Horizonte
+- Flexibility routine video or poster for student athletes at Example School
 
 Assessment Suggestions:
 - Conditioning session plan evaluated for balance, safety, and progression

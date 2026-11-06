@@ -98,7 +98,7 @@ export const PLANNING_TEXT = {
   en: {
     pageTitle: "Interdisciplinary Lesson Planning",
     pageDescription:
-      "Generate lesson plans, projects, or learning sequences grounded in Colégio Horizonte curriculum plans. The primary subject anchors every plan; connected subjects extend it.",
+      "Generate lesson plans, projects, or learning sequences grounded in example curriculum plans. The primary subject anchors every plan; connected subjects extend it.",
     backToChat: "Back to chat",
     formTitle: "Plan settings",
     formDescription:
@@ -136,7 +136,7 @@ export const PLANNING_TEXT = {
   "pt-BR": {
     pageTitle: "Planejamento interdisciplinar",
     pageDescription:
-      "Gere planos de aula, projetos ou sequências de aprendizagem com base nos planos curriculares do Colégio Horizonte. A disciplina principal ancora cada plano; as conexões a estendem.",
+      "Gere planos de aula, projetos ou sequências de aprendizagem com base nos planos curriculares de exemplo. A disciplina principal ancora cada plano; as conexões a estendem.",
     backToChat: "Voltar ao chat",
     formTitle: "Configurações do plano",
     formDescription:

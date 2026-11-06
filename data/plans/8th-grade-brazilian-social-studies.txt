@@ -7,7 +7,7 @@ Subject: Brazilian Social Studies
 Academic Year: 2025
 
 Overview:
-Eighth-grade Brazilian Social Studies at Colégio Horizonte focuses on contemporary Brazil from the 1990s to the present, examining economic policy, democratic participation, social inequality, and Brazil's role in a globalized world. Students study citizenship as an active practice—voting, advocacy, consumer choices, and community engagement—while analyzing how history shapes present debates on rights, environment, and development. Rio de Janeiro serves as a case study for mega-events, urban challenges, and cultural influence in national life.
+Eighth-grade Brazilian Social Studies at Example School focuses on contemporary Brazil from the 1990s to the present, examining economic policy, democratic participation, social inequality, and Brazil's role in a globalized world. Students study citizenship as an active practice—voting, advocacy, consumer choices, and community engagement—while analyzing how history shapes present debates on rights, environment, and development. Rio de Janeiro serves as a case study for mega-events, urban challenges, and cultural influence in national life.
 
 Core Competencies:
 - Analyze recent economic and political transformations in Brazil and their social effects
@@ -94,7 +94,7 @@ Keywords:
 Project Opportunities:
 - Mock municipal assembly debating a school-zone safety or environmental measure
 - Rights awareness campaign for peers on voting, digital privacy, or public health
-- Service-learning proposal linking Colégio Horizonte to a Rio community partner
+- Service-learning proposal linking Example School to a Rio community partner
 
 Assessment Suggestions:
 - Scenario test on resolving conflicts using constitutional rights language

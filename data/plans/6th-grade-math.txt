@@ -7,7 +7,7 @@ Subject: Mathematics
 Academic Year: 2025
 
 Overview:
-Sixth-grade mathematics at Colégio Horizonte transitions students from arithmetic fluency to proportional thinking, geometric reasoning, and statistical literacy. Students explore ratios and percentages as tools for comparing quantities in commerce, sports, and science contexts. Geometry expands to angle relationships, area of composite figures, and coordinate plotting. Statistics introduces data collection methods and graphical interpretation that support science fair projects and school surveys.
+Sixth-grade mathematics at Example School transitions students from arithmetic fluency to proportional thinking, geometric reasoning, and statistical literacy. Students explore ratios and percentages as tools for comparing quantities in commerce, sports, and science contexts. Geometry expands to angle relationships, area of composite figures, and coordinate plotting. Statistics introduces data collection methods and graphical interpretation that support science fair projects and school surveys.
 
 Core Competencies:
 - Use ratios and percentages to compare quantities and solve practical problems

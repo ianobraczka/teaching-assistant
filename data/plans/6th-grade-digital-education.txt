@@ -7,7 +7,7 @@ Subject: Digital Education
 Academic Year: 2025
 
 Overview:
-Sixth-grade digital education at Colégio Horizonte strengthens students' ability to find, evaluate, and communicate information in digital environments while introducing computational thinking as a problem-solving approach. Building on fifth-grade citizenship foundations, students practice research skills for science and humanities projects, collaborate through school-approved platforms, and decompose problems into logical steps. The curriculum supports interdisciplinary work by teaching tools and habits that transfer directly to math data projects and science investigations.
+Sixth-grade digital education at Example School strengthens students' ability to find, evaluate, and communicate information in digital environments while introducing computational thinking as a problem-solving approach. Building on fifth-grade citizenship foundations, students practice research skills for science and humanities projects, collaborate through school-approved platforms, and decompose problems into logical steps. The curriculum supports interdisciplinary work by teaching tools and habits that transfer directly to math data projects and science investigations.
 
 Core Competencies:
 - Locate and evaluate digital information using credibility criteria

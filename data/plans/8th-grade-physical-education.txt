@@ -7,7 +7,7 @@ Subject: Physical Education
 Academic Year: 2025
 
 Overview:
-Eighth-grade physical education at Colégio Horizonte prepares students for lifelong fitness, sports leadership, and holistic wellness beyond school competition. Students design individualized exercise programs, rotate through player, referee, and coach roles in team sports, and explore body awareness through conditioning and conscious movement practices. Critical discussions address performance pressures, media ideals, and safe participation in community sport. Rio context includes mapping local facilities from praia courts to municipal gyms, beach soccer and volleyball leadership scenarios, and wellness practices suited to tropical urban living.
+Eighth-grade physical education at Example School prepares students for lifelong fitness, sports leadership, and holistic wellness beyond school competition. Students design individualized exercise programs, rotate through player, referee, and coach roles in team sports, and explore body awareness through conditioning and conscious movement practices. Critical discussions address performance pressures, media ideals, and safe participation in community sport. Rio context includes mapping local facilities from praia courts to municipal gyms, beach soccer and volleyball leadership scenarios, and wellness practices suited to tropical urban living.
 
 Core Competencies:
 - Design and sustain individualized exercise programs aligned with personal health goals
@@ -135,7 +135,7 @@ Keywords:
 - self-care
 
 Project Opportunities:
-- Wellness week initiative planned by students for Colégio Horizonte
+- Wellness week initiative planned by students for Example School
 - Body image awareness campaign using positive, evidence-based messaging
 - Personal wellness contract integrating movement, rest, and digital balance
 
@@ -164,7 +164,7 @@ Learning Objectives:
 - Plan a safe adventure activity respecting environmental and personal risk factors
 - Participate in martial arts practice with cultural appreciation and safety protocols
 - Synthesize eighth-grade learning in a wellness and leadership portfolio
-- Articulate a realistic plan for staying active after leaving Colégio Horizonte
+- Articulate a realistic plan for staying active after leaving Example School
 
 BNCC Skills:
 - EF89EF06, EF89EF16, EF89EF19 (reinforcement and integration)
@@ -178,7 +178,7 @@ Keywords:
 - lifelong wellness
 
 Project Opportunities:
-- Community sport resource guide for families near Colégio Horizonte
+- Community sport resource guide for families near Example School
 - Adventure activity proposal with risk assessment and environmental guidelines
 - Graduation wellness portfolio presented in student-led conference
 

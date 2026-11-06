@@ -7,7 +7,7 @@ Subject: Mathematics
 Academic Year: 2025
 
 Overview:
-Eighth-grade mathematics at Colégio Horizonte formalizes functional thinking, advanced geometric reasoning, and statistical inference to prepare students for high school STEM pathways. Linear functions model real phenomena from science experiments and sustainability projects. Geometry extends to similarity, the Pythagorean theorem, and volume of cylinders and cones. Probability and data analysis equip students to interpret uncertainty in environmental studies, health information, and technology metrics. The curriculum emphasizes modeling, justification, and communication for interdisciplinary capstones.
+Eighth-grade mathematics at Example School formalizes functional thinking, advanced geometric reasoning, and statistical inference to prepare students for high school STEM pathways. Linear functions model real phenomena from science experiments and sustainability projects. Geometry extends to similarity, the Pythagorean theorem, and volume of cylinders and cones. Probability and data analysis equip students to interpret uncertainty in environmental studies, health information, and technology metrics. The curriculum emphasizes modeling, justification, and communication for interdisciplinary capstones.
 
 Core Competencies:
 - Model and analyze relationships using linear functions in tables, graphs, and equations

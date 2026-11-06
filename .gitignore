@@ -48,3 +48,12 @@ next-env.d.ts
 /data/schoology-export/
 /data/schoology-debug-report.json
 /data/schoology-debug.log
+
+# Local IDE / Cursor
+.cursor/
+
+# Local PDF sources (use pre-extracted .txt under data/documents)
+*.pdf
+
+# npm debug
+debug-*.log
